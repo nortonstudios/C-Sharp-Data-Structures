@@ -1,0 +1,9 @@
+/Users/mike/Projects/DataStructures/QueueLibrary/QueueLibrary/bin/Debug/netcoreapp3.1/QueueLibrary.deps.json
+/Users/mike/Projects/DataStructures/QueueLibrary/QueueLibrary/bin/Debug/netcoreapp3.1/QueueLibrary.dll
+/Users/mike/Projects/DataStructures/QueueLibrary/QueueLibrary/bin/Debug/netcoreapp3.1/QueueLibrary.pdb
+/Users/mike/Projects/DataStructures/QueueLibrary/QueueLibrary/obj/Debug/netcoreapp3.1/QueueLibrary.csprojAssemblyReference.cache
+/Users/mike/Projects/DataStructures/QueueLibrary/QueueLibrary/obj/Debug/netcoreapp3.1/QueueLibrary.AssemblyInfoInputs.cache
+/Users/mike/Projects/DataStructures/QueueLibrary/QueueLibrary/obj/Debug/netcoreapp3.1/QueueLibrary.AssemblyInfo.cs
+/Users/mike/Projects/DataStructures/QueueLibrary/QueueLibrary/obj/Debug/netcoreapp3.1/QueueLibrary.csproj.CoreCompileInputs.cache
+/Users/mike/Projects/DataStructures/QueueLibrary/QueueLibrary/obj/Debug/netcoreapp3.1/QueueLibrary.dll
+/Users/mike/Projects/DataStructures/QueueLibrary/QueueLibrary/obj/Debug/netcoreapp3.1/QueueLibrary.pdb
