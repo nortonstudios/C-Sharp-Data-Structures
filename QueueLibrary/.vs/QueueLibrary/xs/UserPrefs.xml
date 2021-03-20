@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{B36416AD-AA48-4911-BA83-3FA7FAD38389}|Default">
-  <MonoDevelop.Ide.ItemProperties.QueueLibrary.Tests FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="QueueLibrary.Tests/QueueClassTests.cs">
+  <MonoDevelop.Ide.ItemProperties.QueueLibrary.Tests PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="QueueLibrary.Tests/QueueModelTests.cs">
     <Files>
-      <File FileName="QueueLibrary/QueueNode.cs" Line="16" Column="6" />
-      <File FileName="QueueLibrary/QueueClass.cs" Line="31" Column="14" />
-      <File FileName="QueueLibrary.Tests/QueueClassTests.cs" Line="8" Column="10" />
+      <File FileName="QueueLibrary.Tests/QueueNodeTests.cs" Line="38" Column="1" />
+      <File FileName="QueueLibrary.Tests/QueueModelTests.cs" Line="59" Column="1" />
+      <File FileName="QueueLibrary/QueueModel.cs" Line="38" Column="30" NotebookId="1" />
+      <File FileName="QueueLibrary/QueueNode.cs" Line="19" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,20 +13,26 @@
           <Node name="QueueLibrary" expanded="True">
             <Node name="QueueLibrary" expanded="True" />
             <Node name="QueueLibrary.Tests" expanded="True">
-              <Node name="QueueClassTests.cs" selected="True" />
+              <Node name="QueueModelTests.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="QueueLibrary" expanded="True" selected="True" />
+          <Node name="QueueLibrary" expanded="True">
+            <Node name="QueueLibrary.Tests" expanded="True">
+              <Node name="QueueLibrary.Tests" expanded="True">
+                <Node name="QueueClassTests" expanded="True" selected="True" />
+                <Node name="QueueNodeTests" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.QueueLibrary FirstBuild="True" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

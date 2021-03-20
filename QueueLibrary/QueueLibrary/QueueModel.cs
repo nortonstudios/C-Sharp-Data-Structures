@@ -1,32 +1,35 @@
 ﻿using System;
+
 namespace QueueLibrary
 {
-    public class QueueClass
+    public class QueueModel
     {
         //Props and fields
         public QueueNode Front { get; private set; }
         public QueueNode Back { get; private set; }
+        public int QueueLength { get; set; }
 
         //public methods
         public void enqueue(object payload)
         {
+            if(IsEmpty())
+            {
+                InitialEnqueue(payload);
+                return;
+            }
 
             Back = new QueueNode(payload, Back);
-            throw new NotImplementedException();
-            //Front and Back need to be the same node in a 1 node queue.
-            //Eliminate one or the other?
-            //
-
-
         }
 
         public object dequeue()
         {
-            throw new NotImplementedException();
+            object payload = Front.GetPayload();
+            Front = Front.GetNext();
+            return payload;
         }
 
         public bool IsEmpty()
-        {
+        { 
             if (Front == null)
             {
                 return true;
@@ -37,9 +40,19 @@ namespace QueueLibrary
             }
         }
 
+        private void InitialEnqueue(object payload)
+        {
+            Front = new QueueNode(payload, null);
+            Back = Front;
+        }
 
+        public int GetLength()
+        {
+            return QueueLength;
+        }
 
-        public QueueClass()
+        //Constructor
+        public QueueModel()
         {
         }
     }
