@@ -3,9 +3,9 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="QueueLibrary.Tests/QueueModelTests.cs">
     <Files>
       <File FileName="QueueLibrary.Tests/QueueNodeTests.cs" Line="38" Column="1" />
-      <File FileName="QueueLibrary.Tests/QueueModelTests.cs" Line="59" Column="1" />
-      <File FileName="QueueLibrary/QueueModel.cs" Line="38" Column="30" NotebookId="1" />
-      <File FileName="QueueLibrary/QueueNode.cs" Line="19" Column="1" NotebookId="1" />
+      <File FileName="QueueLibrary.Tests/QueueModelTests.cs" Line="87" Column="1" />
+      <File FileName="QueueLibrary/QueueModel.cs" Line="54" Column="52" NotebookId="1" />
+      <File FileName="QueueLibrary/QueueNode.cs" Line="28" Column="2" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,7 +23,9 @@
           <Node name="QueueLibrary" expanded="True">
             <Node name="QueueLibrary.Tests" expanded="True">
               <Node name="QueueLibrary.Tests" expanded="True">
-                <Node name="QueueClassTests" expanded="True" selected="True" />
+                <Node name="QueueClassTests" expanded="True">
+                  <Node name="DumpQueue_ShouldReturnListOfObjects(first: &quot;Hello&quot;, second: &quot;there&quot;, third: &quot;Kenobi&quot;)" selected="True" />
+                </Node>
                 <Node name="QueueNodeTests" expanded="True" />
               </Node>
             </Node>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace QueueLibrary
 {
@@ -26,6 +27,16 @@ namespace QueueLibrary
             object payload = Front.GetPayload();
             Front = Front.GetNext();
             return payload;
+        }
+
+        public List<object> Dump()
+        {
+            List<object> output = new List<object>();
+            while (IsEmpty() != true)
+            {
+                output.Add(this.dequeue());
+            }
+            return output;
         }
 
         public bool IsEmpty()

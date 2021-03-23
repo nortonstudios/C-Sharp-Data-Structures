@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using QueueLibrary;
 using Xunit;
 
@@ -7,6 +8,8 @@ namespace QueueLibrary.Tests
 {
     public class QueueClassTests
     {
+
+
 
         [Fact]
         public void IsEmptyMethod_WhereQueueIsEmpty_ShouldRetrunTrue()
@@ -67,6 +70,50 @@ namespace QueueLibrary.Tests
 
             //Assert
             Assert.Equal(0, actual);
+        }
+
+        [Theory]
+        [InlineData("Hello", "there", "Kenobi")]
+        public void Dequeue_AfterMultipleEnqueues_ShouldReturnListOfObjects(string first, string second, string third)
+        {
+            //Arrange
+            List<string> expected = new List<string>(new string[] { first, second, third });
+            QueueModel testQueue = new QueueModel();
+            foreach (var str in expected)
+            {
+                testQueue.enqueue(str);
+            }
+            List<object> actual = new List<object>();
+
+            //Act
+            for (int i = 0; i < expected.Count; i++)
+            {
+                actual.Add(testQueue.dequeue());
+            }
+
+            //Assert
+            Assert.Equal<object>(expected, actual);
+        }
+
+
+        [Theory]
+        [InlineData("Hello", "there", "Kenobi")]
+        public void DumpQueue_ShouldReturnListOfObjects(string first, string second, string third)
+        {
+            //Arrange
+            List<string> expected = new List<string>( new string[]{ first, second, third });
+            QueueModel testQueue = new QueueModel();
+            foreach (var str in expected)
+            { 
+                testQueue.enqueue(str);
+            }
+            List<object> actual;
+
+            //Act
+            actual = testQueue.Dump();
+
+            //Assert
+            Assert.Equal<object>(expected, actual);
         }
 
 
