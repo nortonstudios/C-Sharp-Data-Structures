@@ -8,24 +8,27 @@ namespace QueueLibrary
         //Props and fields
         public QueueNode Front { get; private set; }
         public QueueNode Back { get; private set; }
-        public int QueueLength { get; set; }
+        public int QueueLength { get; set; } = 0;
 
         //public methods
-        public void enqueue(object payload)
+        public void Enqueue(object payload)
         {
             if(IsEmpty())
             {
                 InitialEnqueue(payload);
                 return;
             }
-
-            Back = new QueueNode(payload, Back);
+            QueueNode newBack = new QueueNode(payload, null);
+            Back.Next = newBack;
+            Back = newBack;
+            QueueLength++;
         }
 
-        public object dequeue()
+        public object Dequeue()
         {
             object payload = Front.GetPayload();
             Front = Front.GetNext();
+            QueueLength--;
             return payload;
         }
 
@@ -34,14 +37,14 @@ namespace QueueLibrary
             List<object> output = new List<object>();
             while (IsEmpty() != true)
             {
-                output.Add(this.dequeue());
+                output.Add(this.Dequeue());
             }
             return output;
         }
 
         public bool IsEmpty()
         { 
-            if (Front == null)
+            if (QueueLength == 0 )
             {
                 return true;
             }
@@ -55,6 +58,7 @@ namespace QueueLibrary
         {
             Front = new QueueNode(payload, null);
             Back = Front;
+            QueueLength++;
         }
 
         public int GetLength()

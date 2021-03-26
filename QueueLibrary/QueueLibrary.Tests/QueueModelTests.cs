@@ -9,35 +9,31 @@ namespace QueueLibrary.Tests
     public class QueueClassTests
     {
 
-
-
         [Fact]
-        public void IsEmptyMethod_WhereQueueIsEmpty_ShouldRetrunTrue()
+        public void IsEmptyMethod_WhereQueueIsEmpty_ShouldReturnTrue()
         {
             //Arrange
-            QueueModel TestQueue = new QueueModel();
+            QueueModel testQueue = new QueueModel();
 
             //Act
-            bool actual = TestQueue.IsEmpty();
+            bool actual = testQueue.IsEmpty();
 
             //Assert
             Assert.True(actual);
-
         }
 
         [Fact]
-        public void IsEmptyMethod_WhereQueueHasOneNode_ShouldRetrunFalse()
+        public void IsEmptyMethod_WhereQueueHasOneNode_ShouldReturnFalse()
         {
             //Arrange
-            QueueModel TestQueue = new QueueModel();
-            TestQueue.enqueue("Hi");
+            QueueModel testQueue = new QueueModel();
+            testQueue.Enqueue("Hi");
 
             //Act
-            bool actual = TestQueue.IsEmpty();
+            bool actual = testQueue.IsEmpty();
 
             //Assert
             Assert.False(actual);
-
         }
 
         [Theory]
@@ -45,11 +41,11 @@ namespace QueueLibrary.Tests
         public void Dequeue_WhereQueueHasOneNode_ShouldReturnEnqueuedValue(string expected)
         {
             //Arrange
-            QueueModel TestQueue = new QueueModel();
-            TestQueue.enqueue(expected);
+            QueueModel testQueue = new QueueModel();
+            testQueue.Enqueue(expected);
 
             //Act
-            String actual = TestQueue.dequeue().ToString();
+            String actual = testQueue.Dequeue().ToString();
 
             //Assert
             Assert.Equal(actual, expected);
@@ -60,13 +56,13 @@ namespace QueueLibrary.Tests
         public void QueueLength_AfterEnqueueAndDequeue_ShouldReturnZero(string payload)
         {
             //Arrange
-            QueueModel TestQueue = new QueueModel();
-            TestQueue.enqueue(payload);
+            QueueModel testQueue = new QueueModel();
+            testQueue.Enqueue(payload);
             int actual = 0;
 
             //Act
-            TestQueue.dequeue().ToString();
-            actual = TestQueue.GetLength();
+            testQueue.Dequeue().ToString();
+            actual = testQueue.GetLength();
 
             //Assert
             Assert.Equal(0, actual);
@@ -81,14 +77,14 @@ namespace QueueLibrary.Tests
             QueueModel testQueue = new QueueModel();
             foreach (var str in expected)
             {
-                testQueue.enqueue(str);
+                testQueue.Enqueue(str);
             }
             List<object> actual = new List<object>();
 
             //Act
             for (int i = 0; i < expected.Count; i++)
             {
-                actual.Add(testQueue.dequeue());
+                actual.Add(testQueue.Dequeue());
             }
 
             //Assert
@@ -105,17 +101,14 @@ namespace QueueLibrary.Tests
             QueueModel testQueue = new QueueModel();
             foreach (var str in expected)
             { 
-                testQueue.enqueue(str);
+                testQueue.Enqueue(str);
             }
-            List<object> actual;
-
+            
             //Act
-            actual = testQueue.Dump();
+            List<object> actual = testQueue.Dump();
 
             //Assert
             Assert.Equal<object>(expected, actual);
         }
-
-
     }
 }

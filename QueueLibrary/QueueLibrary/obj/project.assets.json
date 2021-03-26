@@ -20,7 +20,7 @@
       "outputPath": "/Users/mike/Projects/DataStructures/QueueLibrary/QueueLibrary/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/mike/.config/NuGet/NuGet.Config"
+        "/Users/mike/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
