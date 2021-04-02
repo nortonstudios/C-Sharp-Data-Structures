@@ -1,0 +1,9 @@
+/Users/mike/Projects/DataStructures/SListLibrary/SListLibrary/bin/Debug/netcoreapp3.1/SListLibrary.deps.json
+/Users/mike/Projects/DataStructures/SListLibrary/SListLibrary/bin/Debug/netcoreapp3.1/SListLibrary.dll
+/Users/mike/Projects/DataStructures/SListLibrary/SListLibrary/bin/Debug/netcoreapp3.1/SListLibrary.pdb
+/Users/mike/Projects/DataStructures/SListLibrary/SListLibrary/obj/Debug/netcoreapp3.1/SListLibrary.csprojAssemblyReference.cache
+/Users/mike/Projects/DataStructures/SListLibrary/SListLibrary/obj/Debug/netcoreapp3.1/SListLibrary.AssemblyInfoInputs.cache
+/Users/mike/Projects/DataStructures/SListLibrary/SListLibrary/obj/Debug/netcoreapp3.1/SListLibrary.AssemblyInfo.cs
+/Users/mike/Projects/DataStructures/SListLibrary/SListLibrary/obj/Debug/netcoreapp3.1/SListLibrary.csproj.CoreCompileInputs.cache
+/Users/mike/Projects/DataStructures/SListLibrary/SListLibrary/obj/Debug/netcoreapp3.1/SListLibrary.dll
+/Users/mike/Projects/DataStructures/SListLibrary/SListLibrary/obj/Debug/netcoreapp3.1/SListLibrary.pdb

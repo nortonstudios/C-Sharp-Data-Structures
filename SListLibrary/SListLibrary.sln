@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SListLibrary", "SListLibrary\SListLibrary.csproj", "{BAA9FCA8-4F83-4E5F-87CA-E1A6809056D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlistLibrary.Tests", "SlistLibrary.Tests\SlistLibrary.Tests.csproj", "{36231F6F-0A8A-462F-94F6-74C5DF69C82C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAA9FCA8-4F83-4E5F-87CA-E1A6809056D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAA9FCA8-4F83-4E5F-87CA-E1A6809056D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAA9FCA8-4F83-4E5F-87CA-E1A6809056D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAA9FCA8-4F83-4E5F-87CA-E1A6809056D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36231F6F-0A8A-462F-94F6-74C5DF69C82C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36231F6F-0A8A-462F-94F6-74C5DF69C82C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36231F6F-0A8A-462F-94F6-74C5DF69C82C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36231F6F-0A8A-462F-94F6-74C5DF69C82C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
