@@ -2,7 +2,7 @@
 
 namespace SListLibrary
 {
-    public class SLNode
+    public class SLNode 
     {
         private object _payload;
 
