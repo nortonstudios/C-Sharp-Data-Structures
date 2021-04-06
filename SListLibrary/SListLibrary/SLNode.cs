@@ -5,7 +5,6 @@ namespace SListLibrary
     public class SLNode 
     {
         private object _payload;
-
         private SLNode _next;
 
         public object GetPayload()

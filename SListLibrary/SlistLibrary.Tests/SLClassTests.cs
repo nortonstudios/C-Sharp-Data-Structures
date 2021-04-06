@@ -1,5 +1,7 @@
+using System;
 using SListLibrary;
 using Xunit;
+using Xunit.Sdk;
 
 
 namespace SListLibrary.Tests
@@ -8,7 +10,7 @@ namespace SListLibrary.Tests
     {
         public SLClass testList = new SLClass();
         public string actual = "Hi";
-        
+
         [Fact]
         public void ShouldCreateNewListObject()
         {
@@ -26,31 +28,60 @@ namespace SListLibrary.Tests
         }
 
         [Fact]
-        public void ShouldHaveLocationOfZero_NewEmptyList()
+        public void GetLocation_NewEmptyList_ShouldThrowError()
         {
             //Arrange
             //Act
             //Assert
+            Assert.ThrowsAny<Exception>(() => testList.GetLocation());
+        }
+        
+        [Fact]
+        public void ShouldInsertNewNode_OnAnEmptyList_ShouldCompile()
+        {
+            //Arrange
+            testList.Insert(actual);
+            
+        }
+    }
+
+    public class OneNodeSLClassTests
+    {
+        public SLClass testList = new SLClass();
+        public string expected = "Hi";
+
+        //Constructor
+        public OneNodeSLClassTests()
+        {
+            testList.Insert(expected);
+        }
+
+        //Tests
+        [Fact]
+        public void IsEmpty_OneNodeList_ShouldReturnFalse()
+        {
+            //Assert
+            Assert.False(testList.IsEmpty());
+        }
+
+        [Fact]
+        public void GetLocation_OneNodeList_ShouldBeLocationZero()
+        {
+            //Assert
             Assert.Equal(0,testList.GetLocation());
         }
 
-        //Act
-        //use testLIst, why doesnt it work?
-        
-        
-        
         [Fact]
-        public void ShouldInsertNewNode_OnAnEmptyList()
+        public void GetCursor_OneNodeList_ShouldReturnExpectedString()
         {
+            //Arrange
             
-            //Act
-            testList.Insert(actual);
-
+            //Act 
+            string actual = testList.GetCursor().ToString();
+            
             //Assert
-            
-
-
+            Assert.Equal(expected, actual);
         }
-        
-    }
+
+}
 }
