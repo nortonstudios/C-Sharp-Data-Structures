@@ -68,20 +68,43 @@ namespace SListLibrary.Tests
         public void GetLocation_OneNodeList_ShouldBeLocationZero()
         {
             //Assert
-            Assert.Equal(0,testList.GetLocation());
+            Assert.Equal(0, testList.GetLocation());
         }
 
         [Fact]
         public void GetCursor_OneNodeList_ShouldReturnExpectedString()
         {
             //Arrange
-            
+
             //Act 
             string actual = testList.GetCursor().ToString();
-            
+
             //Assert
             Assert.Equal(expected, actual);
         }
 
+        [Fact]
+        public void GoToBeginning_OneNodeList_ShouldCompile()
+        {
+            //Arrange
+            //Act 
+            testList.GoToBeginning();
+        }
+
+        [Fact]
+        public void GoToEnd_OneNodeList_ShouldCompile()
+        {
+            //Arrange
+            //Act
+            testList.GoToEnd();
+        }
+
+        [Fact]
+        public void GoToNext_OneNodeList_ShouldCompile()
+        {
+            //Arrange
+            //Act
+            testList.GoToNext();
+        }
 }
 }
