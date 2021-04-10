@@ -19,5 +19,20 @@ namespace SListLibrary.Tests
             Assert.Equal(expected, actual);
 
         }
+
+        [Fact]
+        public void SetNext_GetNextShouldReturnSetNode()
+        {
+            //Arrange
+            var testNode = new SLNode("hi");
+            var expected = new SLNode("there");
+            
+            //Act
+            testNode.SetNext(expected);
+            var actual = testNode.GetNext();
+
+            //Assert
+            Assert.Same(expected, actual);
+        }
     }
 }

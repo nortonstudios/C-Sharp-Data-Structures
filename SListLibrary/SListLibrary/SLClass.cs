@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel.DataAnnotations;
 
 namespace SListLibrary
 {
@@ -7,32 +6,27 @@ namespace SListLibrary
     {
         private int _location = 0;
         private int _length = 0;
-        private SLNode _cursor = null;
-        private SLNode _head;
-
-
-        public int GetLocation()
-        //Returns current cursor location. 
-        {
-            if (IsEmpty())
-            {
-                throw new NotImplementedException("Empty List!");
-            }
-            return _location;
-        }
-
-        public object GetCursor()
-        //Returns payload at cursor.
-        {
-            object payload = _cursor.GetPayload();
-            return payload;
-        }
+        private IListNode _cursor = null;
+        private IListNode _head;
+        
+        
         
         //Methods
         public bool IsEmpty()
         //Returns true if list's length is 0. 
         {
-            return !(_length > 0);
+            return (_length <= 0);
+        }
+        
+        public object GetCursor()
+            //Returns payload at cursor.
+        {
+            if (IsEmpty())
+            {
+                throw new Exception("Empty List");
+            }
+            object payload = _cursor.GetPayload();
+            return payload;
         }
 
         public void GoToBeginning()
@@ -46,8 +40,40 @@ namespace SListLibrary
         {
             while (_cursor.GetNext() != null)
             {
-                _cursor = _cursor.GetNext();
+                GoToNext();
             }
+        }
+
+        public bool GoToNext()
+        //Sets cursor to next location. Returns false if already at end of list. 
+        {
+            if (_cursor.GetNext() == null)
+            {
+                return false;
+            }
+            _cursor = _cursor.GetNext();
+            return true;
+        }
+
+        public bool GoToPrevious()
+        //Returns true. Empty list returns false.
+        {
+            if (IsEmpty())
+            {
+                return false; 
+            }
+            
+            return true;
+        }
+        
+        public int GetIndex() 
+        //Returns current cursor location, throws error if list is empty. 
+        {
+            if (IsEmpty())
+            {
+                throw new Exception("Empty List!");
+            }
+            return _location;
         }
 
         public void Insert(object payload)
@@ -58,9 +84,48 @@ namespace SListLibrary
                 _cursor = new SLNode(payload, null);
                 _head = _cursor;
             }
+            else
+            {
+                SLNode newNode = new SLNode(payload, _cursor.GetNext());
+                _cursor.SetNext(newNode);
+                _cursor = newNode; 
+                _location++;
+            }
             _length++;
         }
 
+        public void Replace(object payload)
+        //Throws if list is empty.
+        {
+            if (IsEmpty())
+            {
+                throw new Exception("Empty List");
+            }
+        }
+
+        public void Remove()
+        //Reduces length by 1. Throws if list is empty.
+        {
+            if (IsEmpty())
+            {
+                throw new Exception("Empty List");
+            }
+            _length--;
+        }
+
+        public void Clear()
+        {
+            _location = 0;
+            _length = 0;
+            _head = null;
+            _cursor = _head;
+        }
+
+        public int GetLength()
+        {
+            return _length;
+        }
+        
         //Constructors
         public SLClass()
         {
