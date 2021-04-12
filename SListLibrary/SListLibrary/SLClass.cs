@@ -86,7 +86,7 @@ namespace SListLibrary
             }
             else
             {
-                SLNode newNode = new SLNode(payload, _cursor.GetNext());
+                IListNode newNode = new SLNode(payload, _cursor.GetNext());
                 _cursor.SetNext(newNode);
                 _cursor = newNode; 
                 _location++;
@@ -101,15 +101,41 @@ namespace SListLibrary
             {
                 throw new Exception("Empty List");
             }
+            else
+            {
+                _cursor.SetPayload(payload);
+            
+            }
         }
 
         public void Remove()
         //Reduces length by 1. Throws if list is empty.
+        
+        
+        //First node, delete and move cursor forward. 
+        //Second node and later, delete and move cursor back one.
         {
             if (IsEmpty())
             {
                 throw new Exception("Empty List");
             }
+
+            if (_location == 0)
+            {
+                _head = _head.GetNext();
+                _cursor = _head;
+            }
+            
+            
+            
+            IListNode tempNext = _cursor.GetNext(); 
+            int tempLocation = _location;
+            _cursor = _head;
+            for (int i = 0; i < (tempLocation); i++)
+            {
+                _cursor = _cursor.GetNext();
+            }
+            _cursor.SetNext(tempNext);
             _length--;
         }
 

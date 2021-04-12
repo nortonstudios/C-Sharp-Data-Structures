@@ -13,7 +13,7 @@ namespace SListLibrary.Tests
         {
             foreach (var payload in expected)
             {
-                testList.Insert(expected);
+                testList.Insert(payload);
             }
         }
         
@@ -70,10 +70,10 @@ namespace SListLibrary.Tests
             //Assert
             Assert.False(actual);
         }
-/*
+
         
         [Fact]
-        public void GoToPrevious_OneNodeList_ShouldReturnTrue()
+        public void GoToPrevious_TwoNodeList_ShouldReturnTrue()
         {
             //Arrange
             //Act
@@ -84,15 +84,21 @@ namespace SListLibrary.Tests
         }
 
         [Fact]
-        public void Replace_OneNodeList_ShouldCompile()
+        public void Replace_TowNodeList_ShouldReturnExpected()
         {
             //Arrange
+            string expected = "Kenobi";
+            
             //Act
             testList.Replace(expected);
+            string actual = testList.GetCursor().ToString();
+            
+            //Assert
+            Assert.Equal(actual, expected);
         }
 
         [Fact]
-        public void Remove_OneNodeList_ShouldCompile()
+        public void Remove_TwoNodeList_ShouldCompile()
         {
             //Arrange
             //Act
@@ -100,16 +106,45 @@ namespace SListLibrary.Tests
         }
 
         [Fact]
-        public void Remove_OneNodeList_IsEmptyShouldBeTrue()
+        public void Remove_TwoNodeList_IsEmptyShouldBeTrue()
         {
             //Arrange
             //Act
             testList.Remove();
+            int actual = testList.GetLength();
 
             //Assert
-            Assert.True(testList.IsEmpty());
+            Assert.Equal(1, actual);
         }
+        
+        [Fact]
+        public void Remove_AtEndOfTwoNodeList_IsReturnValueOfPrecedingNode()
+        {
+            
+            
+            //Arrange
+            //Act
+            testList.Remove();
+            string actual = testList.GetCursor().ToString();
 
+            //Assert
+            Assert.Equal(expected[0], actual);
+        }
+        
+        [Fact]
+        public void Remove_AtBeginningOfTwoNodeList_IsReturnValueOfPrecedingNode()
+        {
+            //Arrange
+            testList.GoToBeginning();
+            //Act
+            testList.Remove();
+            string actual = testList.GetCursor().ToString();
+
+            //Assert
+            Assert.Equal(expected[1], actual);
+        }
+        
+/*
         [Fact]
         public void Insert_ShouldCompile_OneNodeList()
         {

@@ -3,8 +3,8 @@ namespace SListLibrary
     public interface IListNode
     {
         object GetPayload();
-        SLNode GetNext();
-
+        void SetPayload(object payload);
+        IListNode GetNext();
         void SetNext(IListNode next);
     }
 }

@@ -12,7 +12,12 @@ namespace SListLibrary
             return _payload;
         }
 
-        public SLNode GetNext()
+        public void SetPayload(object payload)
+        {
+            _payload = payload;
+        }
+
+        public IListNode GetNext()
         {
             return _next;
         }
@@ -20,7 +25,7 @@ namespace SListLibrary
         public void SetNext(IListNode next)
         {
             //SLNode newNext = new SLNode(next);
-            _next = next;
+            _next = (SLNode) next;
         }
 
         public SLNode(object payload)
@@ -28,16 +33,16 @@ namespace SListLibrary
             _payload = payload;
             _next = null;
         }
-        public SLNode(object payload, SLNode next)
+        public SLNode(object payload, IListNode next)
         {
             _payload = payload;
-            _next = next;
+            _next = (SLNode)next;
         }
 
         public SLNode(IListNode newNode)
         {
             _payload = newNode.GetPayload();
-            _next = newNode.GetNext();
+            _next = (SLNode) newNode.GetNext();
         }
 
     }
