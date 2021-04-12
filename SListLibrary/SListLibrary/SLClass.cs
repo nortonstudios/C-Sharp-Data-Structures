@@ -125,17 +125,18 @@ namespace SListLibrary
                 _head = _head.GetNext();
                 _cursor = _head;
             }
-            
-            
-            
-            IListNode tempNext = _cursor.GetNext(); 
-            int tempLocation = _location;
-            _cursor = _head;
-            for (int i = 0; i < (tempLocation); i++)
+            else
             {
-                _cursor = _cursor.GetNext();
+                IListNode tempNext = _cursor.GetNext();
+                int tempLocation = _location;
+                _cursor = _head;
+                for (int i = 0; i < (tempLocation - 1); i++)
+                {
+                    _cursor = _cursor.GetNext();
+                }
+                _cursor.SetNext(tempNext);
             }
-            _cursor.SetNext(tempNext);
+
             _length--;
         }
 
