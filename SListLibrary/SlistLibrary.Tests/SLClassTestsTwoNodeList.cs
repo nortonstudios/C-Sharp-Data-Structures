@@ -16,8 +16,8 @@ namespace SListLibrary.Tests
                 testList.Insert(payload);
             }
         }
-        
-         //Tests
+
+        //Tests
         [Fact]
         public void GetLocation_TwoNodeList_ShouldBeLocationOne()
         {
@@ -25,7 +25,7 @@ namespace SListLibrary.Tests
             Assert.Equal(1, testList.GetIndex());
         }
 
-        
+
         [Fact]
         public void GetCursor_TwoNodeList_ShouldReturnExpectedString()
         {
@@ -54,12 +54,12 @@ namespace SListLibrary.Tests
 
             //Act
             string actual = testList.GetCursor().ToString();
-            
+
             //Assert
-            Assert.Equal(expected[1],actual);
-            
+            Assert.Equal(expected[1], actual);
+
         }
-        
+
         [Fact]
         public void GoToNext_TwoNodeList_ShouldReturnFalse()
         {
@@ -71,7 +71,7 @@ namespace SListLibrary.Tests
             Assert.False(actual);
         }
 
-        
+
         [Fact]
         public void GoToPrevious_TwoNodeList_ShouldReturnTrue()
         {
@@ -88,11 +88,11 @@ namespace SListLibrary.Tests
         {
             //Arrange
             string expected = "Kenobi";
-            
+
             //Act
             testList.Replace(expected);
             string actual = testList.GetCursor().ToString();
-            
+
             //Assert
             Assert.Equal(actual, expected);
         }
@@ -116,12 +116,12 @@ namespace SListLibrary.Tests
             //Assert
             Assert.Equal(1, actual);
         }
-        
+
         [Fact]
         public void Remove_AtEndOfTwoNodeList_IsReturnValueOfPrecedingNode()
         {
-            
-            
+
+
             //Arrange
             //Act
             testList.Remove();
@@ -130,7 +130,7 @@ namespace SListLibrary.Tests
             //Assert
             Assert.Equal(expected[0], actual);
         }
-        
+
         [Fact]
         public void Remove_AtBeginningOfTwoNodeList_IsReturnValueOfPrecedingNode()
         {
@@ -143,31 +143,34 @@ namespace SListLibrary.Tests
             //Assert
             Assert.Equal(expected[1], actual);
         }
-        
-/*
-        [Fact]
-        public void Insert_ShouldCompile_OneNodeList()
-        {
-            //Arrange
-            string secondExpected = "there";
-            
-            //Act
-            testList.Insert(secondExpected);
 
-        }
-        
+
         [Fact]
-        public void Insert_GetLocationShouldReturnOne_OneNodeList()
+        public void Insert_ShouldReturnInsertedValue_TwoNodeList()
         {
             //Arrange
-            string payload = "there";
-            
+            string expected = "Kenobi";
+
+            //Act
+            testList.Insert(expected);
+            string actual = testList.GetCursor().ToString();
+
+            //Assert
+            Assert.Equal(actual, expected);
+        }
+
+        [Fact]
+        public void Insert_GetLocationShouldReturnTwo_TwoNodeList()
+        {
+            //Arrange
+            string payload = "Kenobi";
+
             //Act
             testList.Insert(payload);
             int actual = testList.GetIndex();
-            
+
             //Assert
-            Assert.Equal(1,actual);
+            Assert.Equal(2, actual);
         }
 
         [Fact]
@@ -177,21 +180,20 @@ namespace SListLibrary.Tests
             //Act
             testList.Clear();
             //Assert
-            Assert.Equal(0,testList.GetLength());
+            Assert.Equal(0, testList.GetLength());
         }
 
         [Fact]
-        public void Clear_GetIndexShouldThrow_OneNodeList()
+        public void GetLength_GetLengthShouldReturnTwo_TwoNodeList()
         {
             //Arrange
             //Act
-            testList.Clear();
             //Assert
-            Assert.ThrowsAny<Exception>(() =>testList.GetIndex());
+            Assert.Equal(2, testList.GetLength());
         }
-        
+
         [Fact]
-        public void Clear_IsEmptyShouldReturnTrue_OneNodeList()
+        public void Clear_IsEmptyShouldReturnTrue_TwoNodeList()
         {
             //Arrange
             //Act
@@ -199,28 +201,5 @@ namespace SListLibrary.Tests
             //Assert
             Assert.True(testList.IsEmpty());
         }
-        
-        [Fact]
-        public void Clear_GetCursorShouldThrow_OneNodeList()
-        {
-            //Arrange
-            //Act
-            testList.Clear();
-            //Assert
-            Assert.ThrowsAny<Exception>(() =>testList.GetCursor());
-        }
-        
-        [Fact]
-        public void GetLength_GetLengthShouldReturnOne_OneNodeList()
-        {
-            //Arrange
-            //Act
-            //Assert
-            Assert.Equal(1,testList.GetLength());
-        }
-        */
-       
-        
-        
     }
 }

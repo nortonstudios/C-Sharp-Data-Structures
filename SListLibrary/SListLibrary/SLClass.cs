@@ -33,6 +33,7 @@ namespace SListLibrary
         //Sets cursor position to the head node.
         {
             _cursor = _head;
+            _location = 0;
         }
 
         public void GoToEnd()
@@ -41,6 +42,7 @@ namespace SListLibrary
             while (_cursor.GetNext() != null)
             {
                 GoToNext();
+                _location++;
             }
         }
 
@@ -52,6 +54,7 @@ namespace SListLibrary
                 return false;
             }
             _cursor = _cursor.GetNext();
+            _location++;
             return true;
         }
 
@@ -62,6 +65,15 @@ namespace SListLibrary
             {
                 return false; 
             }
+            
+            int tempLocation = _location;
+            _cursor = _head;
+            for (int i = 0; i < (tempLocation - 1); i++)
+            {
+                _cursor = _cursor.GetNext();
+            }
+
+            _location = tempLocation - 1;
             
             return true;
         }
@@ -110,10 +122,6 @@ namespace SListLibrary
 
         public void Remove()
         //Reduces length by 1. Throws if list is empty.
-        
-        
-        //First node, delete and move cursor forward. 
-        //Second node and later, delete and move cursor back one.
         {
             if (IsEmpty())
             {
@@ -128,12 +136,7 @@ namespace SListLibrary
             else
             {
                 IListNode tempNext = _cursor.GetNext();
-                int tempLocation = _location;
-                _cursor = _head;
-                for (int i = 0; i < (tempLocation - 1); i++)
-                {
-                    _cursor = _cursor.GetNext();
-                }
+                this.GoToPrevious();
                 _cursor.SetNext(tempNext);
             }
 
