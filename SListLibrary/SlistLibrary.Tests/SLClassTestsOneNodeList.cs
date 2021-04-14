@@ -9,7 +9,7 @@ namespace SListLibrary.Tests
 
     public class SLClassTestsOneNodeList
     {
-        public SLClass testList = new SLClass();
+        public SingleLinkList testList = new SingleLinkList();
         public string expected = "Hi";
 
         //Constructor

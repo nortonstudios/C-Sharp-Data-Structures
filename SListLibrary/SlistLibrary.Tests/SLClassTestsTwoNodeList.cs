@@ -5,7 +5,7 @@ namespace SListLibrary.Tests
 {
     public class SLClassTestsTwoNodeList
     {
-        public SLClass testList = new SLClass();
+        public SingleLinkList testList = new SingleLinkList();
         public List<string> expected = new() {"Hi", "there"};
 
         //Constructor

@@ -7,7 +7,7 @@ namespace SListLibrary.Tests
 {
     public class SLClassTestsEmptyList
     {
-        public SLClass testList = new SLClass();
+        public SingleLinkList testList = new SingleLinkList();
         public string expected = "Hi";
 
         [Fact]

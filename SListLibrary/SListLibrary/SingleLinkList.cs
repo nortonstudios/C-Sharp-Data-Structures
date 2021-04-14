@@ -1,16 +1,14 @@
 using System;
 
-namespace SListLibrary
+namespace SListLibrary 
 {
-    public class SLClass 
+    public class SingleLinkList : ILList
     {
         private int _location = 0;
         private int _length = 0;
         private IListNode _cursor = null;
         private IListNode _head;
-        
-        
-        
+
         //Methods
         public bool IsEmpty()
         //Returns true if list's length is 0. 
@@ -157,7 +155,7 @@ namespace SListLibrary
         }
         
         //Constructors
-        public SLClass()
+        public SingleLinkList()
         {
            
         }
